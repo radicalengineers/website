@@ -2,7 +2,7 @@ body {
   	font-weight: 300;
   	font-family: 'Rubik', serif;
   	color:white;
-  	background-color: rgba(249, 2, 146, 1.0);
+  	background-color: #E30285;
   }
 
 body a {
@@ -21,7 +21,7 @@ h2, h3, h4, h5 {
 
 h1 {
 	font-weight: 400;
-	font-size: 2.0rem;
+	font-size: 2.5rem;
 }
 
 footer {
@@ -30,20 +30,37 @@ footer {
 }
 
 .name {
-	font-weight: 400;
-	font-size: 80px;
-	color: #0C0CDA;
+	font-weight: 500;
+	font-size: 100px;
+	color: #FFE41E;
 }
 
 
 .bg-start{
-	color: #0C0CDA;
+	color:#2AFC98;
+	background-color: white;
+	background-image: linear-gradient(to top,rgba(207, 2, 121, 0.95),rgba(227, 2, 133, 0.95)), url("../lion_2.png");
+	background-size: 1400px;
+}
+
+.bg-dark {
+	color: #300124;
+	background-color: #F1F1F1;
+}
+
+.bg-medium {
+	color: #300124;
+	background-color: white;
+}
+
+.bg-column {
+	color: #300124;
 	background-color: white;
 }
 
 .logo {
-	background-color: #F4FF52;
-	color: #F4FF52;
+	background-color: #E30285;
+	color: white;
 	font-weight: 700;
 	width: 100%;
 	padding-left: 5%;
@@ -60,7 +77,7 @@ footer {
 
 
 .projects  {
-	color: black;
+	color: #20063B;
 	background-color: white;
 	padding: 30px;
 	height: 300px;
@@ -83,14 +100,23 @@ footer {
 
 .bg-projects {
 	color: white;
-	background-color: rgba(249, 2, 146, 1.0);
+	background-image: linear-gradient(to bottom,rgba(3, 188, 150, 0.95),rgba(3, 154, 123, 0.95)), url("../lion_2.png");
+	background-size: 1400px;
 	border: none;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	z-index: 1000;
-
 }
 
+.bg-footer {
+	color: white;
+	background-image: linear-gradient(to top,rgba(227, 2, 133, 0.95),rgba(227, 2, 133, 0.95)), url("../lion_2.png");
+	background-size: 1400px;
+	border: none;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	z-index: 1000;
+}
 
 .footer-elem{
 	margin: 0px;
@@ -106,31 +132,46 @@ footer {
 
 hr.haar {
 	border: 0;
-    height: 10px;
-    width: 100vw;
-    background: #FFE900;
+    height: 20px;
+    width: 10vw;
+    background: #FFE41E;
     margin: 0 auto;
     margin-left: 0vw;
 }
 
 hr.haar-h {
 	border: 0;
-    height: 5px;
-    width: 18vw;
-    background: rgba(249, 2, 146, 1.0);
+    height: 10px;
+    width: 10vw;
+    background: #039A7B;
     margin-top: 0;
-    margin-left: 30px;
+    margin-bottom: 30px;	
+    margin-left: 33px;
 /*    margin: 0 auto;
     margin-bottom: 5px;*/
 }
 
 hr.haar-y {
 	border: 0;
-    height: 5px;
-    width: 18vw;
-    background: yellow;
+    height: 10px;
+    width: 10vw;
+    background: #FFE41E;
     margin-top: 0;
-    margin-left: 30px;
+    margin-bottom: 30px;	
+    margin-left: 33px;
+/*    margin: 0 auto;
+    margin-bottom: 5px;*/
+}
+
+
+hr.haar-p {
+	border: 0;
+    height: 10px;
+    width: 10vw;
+    background: #E30285;
+    margin-top: 0;
+    margin-bottom: 30px;	
+    margin-left: 33px;
 /*    margin: 0 auto;
     margin-bottom: 5px;*/
 }
@@ -141,10 +182,9 @@ hr.haar-y {
 }
 
 .nav-bottom {
-	background-color: #2E382E;
+	background-color: #BA026D;
 	color: white;
 	font-weight: 500;
-	width: 100vw;
 }
 
 .nav-bottom a{
@@ -159,15 +199,26 @@ hr.haar-y {
 }
 
 @media screen and (max-width: 920px) {
-	.events-aff {
-		height: 400px;
+	.projects {
+		height: 500px;
+	}
+
+	.team {
+		height: 600px;
+		margin: 30px;
 	}
 
 	.name {
-	font-weight: 400;
-	font-size: 2.0rem;
-	color: #0C0CDA;
-}
+		font-weight: 400;
+		font-size: 2.0rem;
+		color: #FFE41E;
+	}
+
+	h1 {
+		font-weight: 400;
+		font-size: 1.5rem;
+
+	}
 
 }
 
@@ -176,7 +227,7 @@ hr.haar-y {
 }
 
 .team {
-	color: black;
+	color: #20063B;
 	padding: 0px;
 	height: 220px;
 	margin: 0 auto;
@@ -216,15 +267,22 @@ hr.haar-y {
 
 
 button {
-	background-color: rgba(249, 2, 146, 1.0);
-	height: 50px;
-	width: 220px;
+	background-color: #E30285;
+	height: 40px;
+	width: 120px;
 	border-radius: 3px;
 	border:none;
 	color: white;
 	font-weight: 400;
 }
 
+button.large {
+	width: 320px;
+}
 button a {
 	color: white;
+}
+
+button a:hover {
+	color: rgba(249, 2, 146, 1.0);
 }
