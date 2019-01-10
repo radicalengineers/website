@@ -70,6 +70,7 @@ footer {
 
 .projects  h3 {
 	font-weight: 600;
+  color: black;
 }
 
 .projects  h5 {
@@ -87,7 +88,8 @@ footer {
 }
 
 .projects a {
-	color: rgba(249, 2, 146, 1.0);
+	/*color: rgba(249, 2, 146, 1.0);*/
+  color: ;
 }
 
 
