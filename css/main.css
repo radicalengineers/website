@@ -341,6 +341,11 @@ button a:hover {
 		background-size: 160px;
 	}
 
+  .img-margreet {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../margreet.jpg");
+    background-size: 160px;
+  }
+
 	.team-img {
 	border-radius: 80px;
 	}
