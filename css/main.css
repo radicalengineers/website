@@ -250,6 +250,11 @@ hr.haar-p {
   background-size: 100px;
 }
 
+.img-james {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../james.jpg");
+  background-size: 100px;
+}
+
 button {
   background-color: #E30285;
   height: 40px;
@@ -343,6 +348,11 @@ button a:hover {
 
   .img-margreet {
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../margreet.jpg");
+    background-size: 160px;
+  }
+
+  .img-james {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../james.jpg");
     background-size: 160px;
   }
 
