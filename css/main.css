@@ -70,6 +70,7 @@ footer {
 
 .projects  h3 {
 	font-weight: 600;
+  color: black;
 }
 
 .projects  h5 {
@@ -87,7 +88,8 @@ footer {
 }
 
 .projects a {
-	color: rgba(249, 2, 146, 1.0);
+	/*color: rgba(249, 2, 146, 1.0);*/
+  color: ;
 }
 
 
@@ -145,7 +147,7 @@ hr.haar-h {
     width: 10vw;
     background: #039A7B;
     margin-top: 0;
-    margin-bottom: 30px;	
+    margin-bottom: 30px;
     margin-left: 33px;
 /*    margin: 0 auto;
     margin-bottom: 5px;*/
@@ -157,7 +159,7 @@ hr.haar-y {
     width: 10vw;
     background: #FFE41E;
     margin-top: 0;
-    margin-bottom: 30px;	
+    margin-bottom: 30px;
     margin-left: 33px;
 /*    margin: 0 auto;
     margin-bottom: 5px;*/
@@ -170,7 +172,7 @@ hr.haar-p {
     width: 10vw;
     background: #E30285;
     margin-top: 0;
-    margin-bottom: 30px;	
+    margin-bottom: 30px;
     margin-left: 33px;
 /*    margin: 0 auto;
     margin-bottom: 5px;*/
@@ -243,8 +245,39 @@ hr.haar-p {
 	background-size: 100px;
 }
 
+.img-margreet {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../margreet.jpg");
+  background-size: 100px;
+}
+
+.img-james {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../james.jpg");
+  background-size: 100px;
+}
 
 button {
+  background-color: #E30285;
+  height: 40px;
+  width: 120px;
+  border-radius: 3px;
+  border:none;
+  color: white;
+  font-weight: 400;
+}
+
+button.large {
+  width: 320px;
+}
+
+button a {
+  color: white;
+}
+
+button a:hover {
+  color: rgba(249, 2, 146, 1.0);
+}
+
+.button {
 	background-color: #E30285;
 	height: 40px;
 	width: 120px;
@@ -252,17 +285,20 @@ button {
 	border:none;
 	color: white;
 	font-weight: 400;
+  text-align: center;
+  display: inline-block;
 }
 
-button.large {
-	width: 320px;
-}
-button a {
-	color: white;
+.button.large {
+  width: 320px;
 }
 
-button a:hover {
-	color: rgba(249, 2, 146, 1.0);
+.button a {
+  color: white;
+}
+
+.button a:hover {
+  color: rgba(249, 2, 146, 1.0);
 }
 
 
@@ -309,6 +345,16 @@ button a:hover {
 		background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../anouk.jpg");
 		background-size: 160px;
 	}
+
+  .img-margreet {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../margreet.jpg");
+    background-size: 160px;
+  }
+
+  .img-james {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../james.jpg");
+    background-size: 160px;
+  }
 
 	.team-img {
 	border-radius: 80px;
