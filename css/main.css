@@ -43,6 +43,10 @@ footer {
 	height: 900px;
 }
 
+.bg-start.small{
+	height: 600px;
+}
+
 .project-banner {
 	color: white;
 	/*background-color: rgba(255, 255, 255, 0.87);*/
