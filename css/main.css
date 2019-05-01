@@ -47,6 +47,10 @@ footer {
 	height: 600px;
 }
 
+.bg-start.oneline {
+	height: 500px;
+}
+
 .project-banner {
 	color: white;
 	/*background-color: rgba(255, 255, 255, 0.87);*/
@@ -64,6 +68,12 @@ footer {
 	color: white;
 /*	background-color: #F9F3C9;*/
 	background-image: linear-gradient(to bottom,rgba(3, 188, 150, 0.95),rgba(3, 154, 123, 0.95)), url("../lion_2.png");
+}
+
+.bg-shade {
+	background-color: #F6F5EA;
+	color: black;
+
 }
 
 .bg-medium {
@@ -299,6 +309,7 @@ hr.haar-p {
 	width: 260px;
 	border-radius: 3px;
 	font-weight: 500;
+	max-width: 50vw;
 }
 
 .button.large {
@@ -330,7 +341,7 @@ hr.haar-p {
 
 	.name {
 		font-weight: 500;
-		font-size: 2.0rem;
+		font-size: 2.3rem;
 		color: #FFE41E;
 	}
 
@@ -340,6 +351,9 @@ hr.haar-p {
 
 	}
 
+	.button.long.text {
+		height: 65px;
+	}
 
 	.img-tom {
 		background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.4)), url("../tom.jpg");
