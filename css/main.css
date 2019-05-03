@@ -327,6 +327,22 @@ hr.haar-p {
   color: rgba(249, 2, 146, 1.0);
 }
 
+.nav-item {
+	/*background-color:rgba(186,2,109,0.5);*/
+	background-color: rgba(255,255,255,0.9);
+	color:  #BA026D;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: right;
+}
+
+.nav-item a {
+	/*color:#1FBFB7;*/
+	color:  #BA026D;
+	font-weight: 400;
+	text-decoration: none;
+}
 
 @media screen and (max-width: 920px) {
 	.projects {
