@@ -406,3 +406,13 @@ hr.haar-p {
 	}
 
 }
+
+.bg-tab {
+	background-color: #BA026D;
+	color: white;
+	padding: 19px;
+}
+
+.bg-tab a {
+	color: white;
+}
