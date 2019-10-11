@@ -328,7 +328,6 @@ hr.haar-p {
 }
 
 .nav-item {
-	/*background-color:rgba(186,2,109,0.5);*/
 	background-color: rgba(255,255,255,0.9);
 	color:  #BA026D;
 	width: 90%;
@@ -338,13 +337,44 @@ hr.haar-p {
 }
 
 .nav-item a {
-	/*color:#1FBFB7;*/
 	color:  #BA026D;
 	font-weight: 400;
 	text-decoration: none;
 }
 
+.nav-item-small {
+	visibility: hidden;
+}
+
+.bg-white-transparant {
+		background-color: rgba(255,255,255,0.9);
+	}
+
+
 @media screen and (max-width: 920px) {
+
+	.nav-item {
+	visibility: hidden;
+	}
+
+	.nav-item-small {
+		visibility: visible;
+	}
+
+	.nav-item-small {
+	color:  #BA026D;
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: left;
+}
+
+	.nav-item-small a {
+	color:  #BA026D;
+	font-weight: 400;
+	text-decoration: none;
+	}
+
 	.projects {
 		height: 700px;
 		padding: 10px;
@@ -357,7 +387,8 @@ hr.haar-p {
 
 	.name {
 		font-weight: 500;
-		font-size: 2.3rem;
+		font-size: 2.1rem;
+		padding-top: 20vh;
 		color: #FFE41E;
 	}
 
