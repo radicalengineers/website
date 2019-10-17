@@ -32,9 +32,11 @@ assert(
 )
 
 
-function syncAll(): void {
+async function syncAll(): Promise<void> {
     for (const filename of FILES) {
-        syncFile(filename)
+        console.log("starting", filename)
+        await syncFile(filename)
+        console.log("finished", filename)
     }
 }
 
@@ -56,21 +58,65 @@ async function syncDom(dom: JSDOM): Promise<void> {
 async function syncList(list: HTMLUListElement): Promise<void> {
     const boardUrl = list.getAttribute("data-synced-with-board")
     const listNames = list.getAttribute("data-synced-list-names")
+    const projectsOnly = list.hasAttribute("data-projects-only")
     if (!listNames) {
         return
     }
 
-    const boardID = boardUrl.replace("https://trello.com/b/", "").split("/")[0]
-    for (const {id, name} of await fetchBoardLists(boardID)) {
+    const boardId = boardUrl.replace("https://trello.com/b/", "").split("/")[0]
+    list.innerHTML = ''
+    let cards = await fetchAndFlatten(boardId, listNames)
+    if (projectsOnly) {
+        let seen = {}
+        cards = cards.map(card => ({
+            ...card,
+            // title is of the format "position, project"
+            // so throw away everything before the comma.
+            name: card.name.replace(/^.*,/, ''),
+            attachments: [],
+        })).filter(
+            // deduplicate by project name
+            (item) => seen[item.name] ? false : (seen[item.name] = true)
+        )
+    }
+    for (const card of cards) {
+        list.appendChild(makeListItem(card))
+    }
+}
+
+function makeListItem(card: CardWithAttachments): HTMLLIElement {
+    return JSDOM.fragment(`
+              <li><h3>${card.name.trim()}</h3>
+              <p>${card.desc.trim()}${
+                  card.attachments.map(attachment =>
+                      ` <a href="${attachment.url}" target="_blank">${
+                          attachment.name === attachment.url
+                              ? "Continue reading"
+                              : attachment.name
+                      }</a>`
+                  )
+              }</p></li>
+            `) as unknown as HTMLLIElement
+}
+
+interface CardWithAttachments {
+    id: string,
+    name: string,
+    desc: string,
+    attachments: Array<Attachment>
+}
+async function fetchAndFlatten(boardId, listNames): Promise<Array<CardWithAttachments>> {
+    const result: Array<CardWithAttachments> = []
+    for (const {id, name} of await fetchBoardLists(boardId)) {
         if (listNames.split(",").indexOf(name) !== -1) {
             const cards = await fetchListCards(id)
             for (const card of cards) {
-                console.log(card)
                 const attachments = await fetchCardAttachments(card.id)
-                console.log(attachments)
+                result.push({...card, attachments})
             }
         }
     }
+    return result
 }
 
 interface List {
