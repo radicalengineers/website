@@ -38,7 +38,7 @@ function syncAll() {
     }
 }
 
-async function syncFile(filename) {
+async function syncFile(filename: string) {
     const dom = await JSDOM.fromFile(filename)
 
     await syncDom(dom)
@@ -74,7 +74,7 @@ async function syncList(list: HTMLUListElement) {
 }
 
 
-async function fetchBoardLists(boardId) {
+async function fetchBoardLists(boardId: string) {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/boards/${boardId}/lists`), 
@@ -92,7 +92,7 @@ async function fetchBoardLists(boardId) {
 }
 
 
-async function fetchListCards(listId) {
+async function fetchListCards(listId: string) {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/lists/${listId}/cards`), 
@@ -108,7 +108,7 @@ async function fetchListCards(listId) {
     return await response.json()
 }
 
-async function fetchCardAttachments(cardId) {
+async function fetchCardAttachments(cardId: string) {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/cards/${cardId}/attachments`), 
