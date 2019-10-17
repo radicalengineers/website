@@ -32,13 +32,13 @@ assert(
 )
 
 
-function syncAll() {
+function syncAll(): void {
     for (const filename of FILES) {
         syncFile(filename)
     }
 }
 
-async function syncFile(filename: string) {
+async function syncFile(filename: string): Promise<void> {
     const dom = await JSDOM.fromFile(filename)
 
     await syncDom(dom)
@@ -47,13 +47,13 @@ async function syncFile(filename: string) {
     fs.writeFileSync(filename, result)
 }
 
-async function syncDom(dom: JSDOM) {
+async function syncDom(dom: JSDOM): Promise<void> {
     const list = dom.window.document.querySelector("ul")
 
     await syncList(list)
 }
 
-async function syncList(list: HTMLUListElement) {
+async function syncList(list: HTMLUListElement): Promise<void> {
     const boardUrl = list.getAttribute("data-synced-with-board")
     const listNames = list.getAttribute("data-synced-list-names")
     if (!listNames) {
@@ -64,8 +64,8 @@ async function syncList(list: HTMLUListElement) {
     for (const {id, name} of await fetchBoardLists(boardID)) {
         if (listNames.split(",").indexOf(name) !== -1) {
             const cards = await fetchListCards(id)
-            console.log(cards)
             for (const card of cards) {
+                console.log(card)
                 const attachments = await fetchCardAttachments(card.id)
                 console.log(attachments)
             }
@@ -73,8 +73,12 @@ async function syncList(list: HTMLUListElement) {
     }
 }
 
+interface List {
+    id: string,
+    name: string,
+}
 
-async function fetchBoardLists(boardId: string) {
+async function fetchBoardLists(boardId: string): Promise<Array<List>> {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/boards/${boardId}/lists`), 
@@ -91,8 +95,13 @@ async function fetchBoardLists(boardId: string) {
     return await response.json()
 }
 
+interface Card {
+    id: string,
+    name: string,
+    desc: string,
+}
 
-async function fetchListCards(listId: string) {
+async function fetchListCards(listId: string): Promise<Array<Card>> {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/lists/${listId}/cards`), 
@@ -108,7 +117,13 @@ async function fetchListCards(listId: string) {
     return await response.json()
 }
 
-async function fetchCardAttachments(cardId: string) {
+interface Attachment {
+    id: string,
+    name: string,
+    url: string,
+}
+
+async function fetchCardAttachments(cardId: string): Promise<Array<Attachment>> {
     const endpoint = url.format(
         {
             ...url.parse(`https://api.trello.com/1/cards/${cardId}/attachments`), 
