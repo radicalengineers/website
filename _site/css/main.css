@@ -447,3 +447,18 @@ hr.haar-p {
 .bg-tab a {
 	color: white;
 }
+
+.jobs {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+ 
+.jobs iframe {
+   border: 0;
+   height: 70vh;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100vh;
+}
